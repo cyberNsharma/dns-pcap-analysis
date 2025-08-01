@@ -1,0 +1,20 @@
+# DNS Analysis Notes
+
+## Summary:
+- Total Packets: 38
+- DNS Queries Observed: 12
+- DNS Responses: 26 (some queries have multiple responses)
+
+## Key Observations:
+- Primary Client IP: 192.168.1.8
+- Common Query Types: A, AAAA, PTR
+- Domains Queried:
+  - example.com
+  - google.com
+- Response Codes: No Error
+
+## Anomaly Noted:
+- One query received 3 different responses — likely retries or multiple DNS servers
+
+## Analysis Tools:
+- Wireshark filters: `dns`, `dns.flags.response == 0`, `dns.flags.response == 1`
